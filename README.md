@@ -1,6 +1,7 @@
 ## Projet interne d'AF83 - aspiration de données d'interval
 
-Projet VIE - Versatile interactive experience
+Projet VIE - Versatile interactive experience / Internal Vaccuum Cleaner
+Simple aspiration des données via l'API d'Interval
 
 
 ### Prérequis
@@ -42,8 +43,11 @@ curl http://localhost:1337/import
 
 ### API
 Get all persons : ```http://localhost:1337/person```
+
 Get all clients : ```http://localhost:1337/client```
+
 Get all times : ```http://localhost:1337/timesheet```
+
 Get all projects : ```http://localhost:1337/project```
 
 
