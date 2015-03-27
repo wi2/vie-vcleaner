@@ -10,8 +10,11 @@ mongo
 
 ### Installation :
 ```
-npm install
+(sudo) npm install -g coffee-script
+
+(sudo) npm install
 ```
+
 
 créer un fichier config/timetask.js
 ```
