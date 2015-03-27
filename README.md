@@ -6,23 +6,23 @@ Simple aspiration des données via l'API d'Interval
 
 ### Prérequis
 node v 0.10 / 0.12
+npm < 1.4
 mongo
 
 ### Installation :
 ```
 (sudo) npm install -g coffee-script
 
+(sudo) npm install -g sails
+
 (sudo) npm install
 ```
 
 
-créer un fichier config/timetask.js
-```
+copier le fichier suivant config/timetask.js avec vos paramètres
 
-module.exports.timetask = {
-  account: 'account_name',
-  token: 'your_token'
-};
+```
+cp config/timetask.js.sample cp config/timetask.js
 
 ```
 
@@ -31,6 +31,12 @@ module.exports.timetask = {
 ```
 sails lift
 ```
+ou
+```
+npm start
+```
+
+
 
 ### pour lancer un import:
 

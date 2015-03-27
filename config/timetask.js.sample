@@ -1,0 +1,4 @@
+module.exports.timetask = {
+  account: 'account_name',
+  token: 'your_token'
+};
