@@ -4,7 +4,7 @@
  # @docs        :: http://sailsjs.org/#!documentation/models
 
 module.exports =
-
+  tableName: 'timesheets'
   attributes:
     localid: 'string'
     time: 'integer'

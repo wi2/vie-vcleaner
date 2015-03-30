@@ -4,6 +4,7 @@
  # @docs        :: http://sailsjs.org/#!documentation/models
 
 module.exports =
+  tableName: 'clients'
   attributes:
     localid: 'string'
     name: 'string'
