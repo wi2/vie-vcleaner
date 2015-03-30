@@ -15,20 +15,6 @@ module.exports =
 
     async.series [
       (next) ->
-        console.log("===== START CLEAN ====")
-        next()
-      (next) ->
-        helper.cleaner Client, 'Client', next
-      (next) ->
-        helper.cleaner Person, 'Person', next
-      (next) ->
-        helper.cleaner Project, 'Project', next
-      (next) ->
-        helper.cleaner Timesheet, 'Timesheet', next
-      (next) ->
-        console.log("===== END CLEAN ====");
-        next()
-      (next) ->
         console.log("===== LOAD CLIENT ====")
         next()
       (next) ->
@@ -40,7 +26,7 @@ module.exports =
           , (item, cb) ->
             item.iid = item.id
             delete item.id
-            Client.create(item).exec (err, created) ->
+            Client.findOrCreate { where: { localid: item.localid }}, item, (err, created) ->
               console.log created.name, created.id
               allitems.clients.data.push created
               cb()
@@ -57,7 +43,7 @@ module.exports =
           , (item, cb) ->
             item.iid = item.id
             delete item.id
-            Person.create(item).exec (err, created) ->
+            Person.findOrCreate { where: { localid: item.localid }}, item, (err, created) ->
               console.log created.firstname, created.lastname, created.id
               allitems.persons.data.push created
               cb()
@@ -79,7 +65,7 @@ module.exports =
               delete item.id
               delete item.client
               item.client = find.id
-              Project.create(item).exec (err, created) ->
+              Project.findOrCreate { where: { localid: item.localid }}, item, (err, created) ->
                 console.log created.name, created.id
                 allitems.projects.data.push created
                 cb()
@@ -108,7 +94,7 @@ module.exports =
               delete item.person
               item.project = find.id
               item.person = findPerson.id
-              Timesheet.create(item).exec (err, created) ->
+              Timesheet.findOrCreate { where: { iid: item.iid }}, item, (err, created) ->
                 console.log created.firstname, created.lastname, created.id, created.project, created.person
                 allitems.times.data.push created
                 cb()
