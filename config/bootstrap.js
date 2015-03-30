@@ -11,6 +11,25 @@
 
 module.exports.bootstrap = function(cb) {
 
+  //cron : récupération des data
+  var CronJob = require('cron').CronJob;
+  var job = new CronJob({
+    cronTime: '00 00 01 * * 1-5',//du lundi au vendredi à 1h
+    onTick: function() {
+      console.log("Cron start");
+      return require('http').get({
+          host: 'localhost',
+          port: 1337,
+          path: '/import'
+      }, null);
+    },
+    start: false,
+    timeZone: 'Europe/Paris'
+  });
+  job.start();
+
+
+
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();
