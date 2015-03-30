@@ -9,8 +9,8 @@ module.exports =
     localid: 'string'
     time: 'integer'
     date: 'date'
-    project:
+    project_id:
       model: 'project'
-    person:
+    person_id:
       model: 'person'
     # minutes: 'integer'

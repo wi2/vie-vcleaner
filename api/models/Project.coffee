@@ -9,8 +9,8 @@ module.exports =
     localid: 'string'
     name: 'string'
     description: 'string'
-    client:
+    client_id:
       model: 'client'
     timesheets:
       collection: 'timesheet'
-      via: 'project'
+      via: 'project_id'

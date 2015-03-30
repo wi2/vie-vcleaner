@@ -11,7 +11,7 @@ module.exports =
     username: 'string'
     firstname: 'string'
     lastname: 'string'
-    pole:
+    pole_id:
       model: 'pole'
-    timesheet:
+    timesheet_id:
       model: 'timesheet'

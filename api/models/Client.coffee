@@ -10,4 +10,4 @@ module.exports =
     name: 'string'
     projects:
       collection: 'project'
-      via: 'client'
+      via: 'client_id'
