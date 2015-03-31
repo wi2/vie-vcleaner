@@ -64,7 +64,7 @@ module.exports =
               item.iid = item.id
               delete item.id
               delete item.client
-              item.client = find.id
+              item.client_id = find.id
               Project.findOrCreate { where: { localid: item.localid }}, item, (err, created) ->
                 console.log created.name, created.id
                 allitems.projects.data.push created
@@ -92,8 +92,8 @@ module.exports =
               delete item.id
               delete item.project
               delete item.person
-              item.project = find.id
-              item.person = findPerson.id
+              item.project_id = find.id
+              item.person_id = findPerson.id
               Timesheet.findOrCreate { where: { iid: item.iid }}, item, (err, created) ->
                 console.log created.firstname, created.lastname, created.id, created.project, created.person
                 allitems.times.data.push created
