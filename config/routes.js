@@ -36,7 +36,11 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'get /import': 'ImportController.import'
+  'get /import': 'ImportController.import',
+
+  'post /emitter': 'ManagerController.emitter',
+
+  'get /subscribe': 'ManagerController.subscribe'
 
   /***************************************************************************
   *                                                                          *

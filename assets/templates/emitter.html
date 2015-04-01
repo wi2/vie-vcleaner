@@ -1,0 +1,12 @@
+<div class="emitter">
+  <button class="btn"
+    ng-repeat="butt in buttons"
+    ng-click="addMessage(butt.id)"
+    ng-bind="butt.label">
+  </button>
+</div>
+
+<img src="" class="person" alt="{{p}}"
+  ng-repeat="p in persons track by $index"
+  ng-mouseover="light($index)" />
+
